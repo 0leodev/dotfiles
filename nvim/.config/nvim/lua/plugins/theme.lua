@@ -1,1 +1,1 @@
-../../../../.config/omarchy/current/theme/neovim.lua
+../../../../../../.config/omarchy/current/theme/neovim.lua
