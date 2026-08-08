@@ -16,6 +16,7 @@
 
     "bluetooth",
     "network",
+    "temperature",
     "cpu",
     "backlight",
     "battery"
@@ -34,6 +35,7 @@
   // "modules-right": [
   //   "bluetooth",
   //   "network",
+  //   "temperature",
   //   "cpu",
   //   "backlight",
   //   "battery"
@@ -84,6 +86,11 @@
     "on-click": "omarchy-launch-or-focus-tui btop",
     "on-click-right": "alacritty"
   },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+    "format": "󰍛 {temperatureC}°C",
+    "interval": 5,
+  },  
   "clock": {
     "format": "{:L%A %I:%M %p}",
     "format-alt": "{:L%d %B W%V %Y}",
@@ -211,4 +218,3 @@
     "on-scroll-down": "brightnessctl set 5%-",
   },
 }
-
