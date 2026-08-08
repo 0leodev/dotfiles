@@ -26,6 +26,7 @@ window#waybar {
   margin-right: 18px;
 }
 
+#temperature,
 #cpu,
 #battery,
 #backlight {
