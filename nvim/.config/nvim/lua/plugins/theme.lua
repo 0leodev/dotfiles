@@ -1,1 +1,1 @@
-dofile(vim.fn.expand("~/.config/omarchy/current/theme/neovim.lua"))
+dofile(vim.fn.expand("~/.local/state/omarchy/current/theme/neovim.lua"))
