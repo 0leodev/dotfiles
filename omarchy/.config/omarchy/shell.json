@@ -7,9 +7,17 @@
   "bar": {
     "position": "top",
     "transparent": false,
-    "centerAnchor": "leo.workspaces",
+    "centerAnchor": "",
     "layout": {
       "left": [
+        {
+          "id": "leo.uptime"
+        },
+        {
+          "id": "omarchy.indicators"
+        }
+      ],
+      "center": [
         {
           "id": "omarchy.clock",
           "format": "ddd d MMM h:mm AP",
@@ -17,23 +25,10 @@
           "verticalFormat": "h\n—\nmm\nAP"
         },
         {
-          "id": "omarchy.weather"
-        },
-        {
           "id": "omarchy.keyboard-layout"
         },
         {
           "id": "omarchy.system-update"
-        }
-      ],
-      "center": [
-        {
-          "id": "leo.workspaces"
-        }
-      ],
-      "right": [
-        {
-          "id": "omarchy.indicators"
         },
         {
           "id": "omarchy.tray"
@@ -42,16 +37,13 @@
           "id": "omarchy.agents"
         },
         {
-          "id": "leo.uptime"
+          "id": "leo.workspaces"
         },
         {
           "id": "omarchy.bluetooth"
         },
         {
           "id": "omarchy.network"
-        },
-        {
-          "id": "omarchy.audio"
         },
         {
           "id": "omarchy.monitor"
@@ -65,7 +57,8 @@
           "id": "leo.power",
           "showPercentage": true
         }
-      ]
+      ],
+      "right": []
     }
   },
   "plugins": []
