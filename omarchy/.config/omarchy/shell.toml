@@ -1,6 +1,6 @@
 [bar]
-size-horizontal = 28
-background-alpha = 0.5
+# size-horizontal = 28
+# background-alpha = 0.5
 # text = "#c0caf5"
 # size-horizontal = 26
 
