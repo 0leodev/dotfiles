@@ -41,5 +41,3 @@ mouse-scroll-multiplier = 0.95
 async-backend = epoll
 
 custom-shader = ~/.config/ghostty/shaders/cursor_warp.glsl
-
-background-opacity = 0.65
