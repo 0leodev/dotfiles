@@ -8,6 +8,11 @@
     "position": "top",
     "transparent": false,
     "centerAnchor": "",
+    "id": "leo.island",
+    "islands": {
+      "opacity": 0.5,
+      "borderWidth": 0
+    },
     "layout": {
       "left": [
         {
