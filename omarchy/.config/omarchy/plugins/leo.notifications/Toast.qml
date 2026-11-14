@@ -223,21 +223,41 @@ Item {
   // card is at opacity 0 and costs no drawing; `enabled` refuses the pointer.
   enabled: !place.hidden && !place.leaving
 
-  // BorderSurface keeps gradients and per-side border widths; content below is
-  // inset by those exact widths.
-  BorderSurface {
-    id: plate
-    width: body.width
-    height: body.height
-    radius: Style.cornerRadius
-    color: Commons.Color.notifications.background
-    borderSpec: Border.surfaceSpec("notifications", "border", Commons.Color.notifications.border,
-                                   Math.max(1, Style.space(2)))
+  // The plate sits inside a frame 36px larger on each side: a layer effect
+  // paints only inside its own item, so the shadow is cast in that margin
+  // instead of being clipped at the card's edge.
+  Item {
+    id: shade
+    x: -36
+    y: -36
+    width: plate.width + 72
+    height: plate.height + 72
+    layer.enabled: true
+    layer.effect: MultiEffect {
+      shadowEnabled: true
+      shadowColor: "#000000"
+      shadowOpacity: 0.8
+      shadowBlur: 1.0
+      blurMax: 32
+      shadowHorizontalOffset: 0
+      shadowVerticalOffset: 4
+    }
+
+    // BorderSurface keeps gradients and per-side border widths; content below
+    // is inset by those exact widths.
+    BorderSurface {
+      id: plate
+      x: 36; y: 36
+      width: body.width; height: body.height
+      radius: Style.cornerRadius
+      color: Commons.Color.notifications.background
+      borderSpec: Border.surfaceSpec("notifications", "border", Commons.Color.notifications.border, Math.max(1, Style.space(2)))
+    }
   }
 
   // The keyboard's card is tinted with the theme's hover fill, buttons and all.
   Rectangle {
-    anchors.fill: plate
+    anchors.fill: body
     anchors { leftMargin: plate.borderLeft; rightMargin: plate.borderRight
               topMargin: plate.borderTop; bottomMargin: plate.borderBottom }
     visible: card.selected
