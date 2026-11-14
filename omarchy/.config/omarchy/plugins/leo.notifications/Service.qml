@@ -1522,7 +1522,7 @@ Item {
       anchors { top: true; bottom: true; right: true }
       implicitWidth: clipper.width + Style.space(10)
 
-      mask: Region { item: surface.showingNotifications ? deck : null }
+      mask: Region { item: surface.showingNotifications ? clipper : null }
 
       Item {
         focus: surface.takesKeyboard
@@ -1537,15 +1537,16 @@ Item {
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.topMargin: surface.margins.top
-        // Room for the arrival's scale animation, and the gap from the edge.
+        // Room for the arrival's scale animation, the card shadow, and the gap
+        // from the edge.
         readonly property int motionInset: Style.spacing.sm
-        width: service.notificationWidth + motionInset + surface.margins.right
-        height: deck.y + deck.height + motionInset
+        width: service.notificationWidth + motionInset + surface.margins.right + 36
+        height: deck.y + deck.height + motionInset + 36
         clip: true
 
         Item {
           id: deck
-          x: clipper.motionInset
+          x: clipper.motionInset + 36
           width: service.notificationWidth
           height: service.deckHeight
 
